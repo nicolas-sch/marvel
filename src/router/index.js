@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import MarvelCharacters from '../components/MarvelCharacters.vue';
+import MarvelCharacters from '../views/MarvelCharacters.vue';
 import CharacterDetails from '../views/CharacterDetails.vue';
 
 const routes = [
