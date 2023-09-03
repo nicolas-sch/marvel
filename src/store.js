@@ -24,18 +24,21 @@ instance.interceptors.request.use(config => {
 });
 
 export const useMarvelStore = defineStore('marvel', {
-  state: () => ({
-    characters: [],
-  }),
-  actions: {
-    async fetchCharacters() {
-      try {
-        const response = await instance.get('/characters');
-        this.characters = response.data.data.results;
-      } catch (error) {
-        console.error('Error fetching characters:', error);
-      }
-    },
+    state: () => ({
+        characters: JSON.parse(localStorage.getItem('characters')) || [], // Inicialize a partir do localStorage
+      }),
+      actions: {
+        async fetchCharacters() {
+          try {
+            const response = await instance.get('/characters');
+            this.characters = response.data.data.results;
+    
+            // Salvar no localStorage
+            localStorage.setItem('characters', JSON.stringify(this.characters));
+          } catch (error) {
+            console.error('Error fetching characters:', error);
+          }
+        },
     async fetchCharacterComics(characterId) {
       try {
         const response = await instance.get(`/characters/${characterId}/comics`);

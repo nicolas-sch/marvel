@@ -1,15 +1,11 @@
 <template>
   <div id="app">
-    <MarvelCharacters />
+    <router-view></router-view> <!-- Adicione esta linha -->
   </div>
 </template>
 
 <script>
-import MarvelCharacters from './components/MarvelCharacters.vue';
-
 export default {
-  components: {
-    MarvelCharacters,
-  },
+  name: 'App',
 };
 </script>
