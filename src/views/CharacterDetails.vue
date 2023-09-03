@@ -13,7 +13,9 @@
           <div class="comics">
             <h2>Comics</h2>
             <ul>
-              <li v-for="comic in characterComics.slice(0, comicsVisible)" :key="comic.id">{{ comic.title }}</li>
+              <li v-for="comic in characterComics.slice(0, comicsVisible)" :key="comic.id">
+                <a @click="openModal(comic, 'comic')">{{ comic.title }}</a>
+            </li>
             </ul>
             <show-more-button
                 :current-visible="comicsVisible"
@@ -26,7 +28,9 @@
           <div class="series">
             <h2>Series</h2>
             <ul>
-              <li v-for="serie in characterSeries.slice(0, seriesVisible)" :key="serie.id">{{ serie.title }}</li>
+              <li v-for="serie in characterSeries.slice(0, seriesVisible)" :key="serie.id">
+                <a @click="openModal(serie, 'serie')">{{ serie.title }}</a>
+            </li>
             </ul>
             <show-more-button
                 :current-visible="seriesVisible"
@@ -36,6 +40,9 @@
             >
             </show-more-button>          
             </div>
+
+            <Modal :isOpen="isModalOpen" :title="selectedItem.title" :description="selectedItem.description" @close="closeModal" />
+
         </div>
       </div>
       <div v-else>
@@ -50,11 +57,14 @@
   import { useMarvelStore } from '@/store';
   import '@/styles/CharacterDetails.scss';
   import ShowMoreButton from '@/components/ShowMoreButton.vue';
+  import Modal from '@/components/Modal.vue';
+  
   
   export default {
     name: 'CharacterDetails',
     components: {
     ShowMoreButton,
+    Modal,
   },
     props: {
       id: {
@@ -72,6 +82,11 @@
       const characterSeries = ref([]);
       const comicsVisible = ref(4);
       const seriesVisible = ref(4);
+
+      
+        const isModalOpen = ref(false);
+        const selectedItem = ref({ title: '', description: '' });
+        const selectedItemType = ref('');
   
       onMounted(async () => {
         characterId.value = +props.id;
@@ -101,6 +116,16 @@
           characterSeries.value = await marvelStore.fetchCharacterSeries(characterId.value);
         }
       });
+
+    const openModal = (item, type) => {
+      selectedItem.value = item;
+      selectedItemType.value = type;
+      isModalOpen.value = true;
+    };
+
+    const closeModal = () => {
+      isModalOpen.value = false;
+    };
       
   
       return {
@@ -109,6 +134,11 @@
         characterSeries,
         comicsVisible,
         seriesVisible,
+        isModalOpen,
+      selectedItem,
+      selectedItemType,
+      openModal,
+      closeModal,
       };
     },
     methods: {
