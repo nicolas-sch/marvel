@@ -41,7 +41,12 @@
           >
           </show-more-button>          
         </div>
-        <modal-dialog :isOpen="isModalOpen" :title="selectedItem.title" :description="selectedItem.description" @close="closeModal" />
+        <modal-dialog 
+          :isOpen="isModalOpen"
+          :title="selectedItem.title"
+          :description="selectedItem.description"
+          @close="closeModal"
+        />
       </div>
     </div>
     <div v-else>
