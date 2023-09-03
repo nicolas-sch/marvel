@@ -42,7 +42,7 @@
             </show-more-button>          
             </div>
 
-            <Modal :isOpen="isModalOpen" :title="selectedItem.title" :description="selectedItem.description" @close="closeModal" />
+            <modal-dialog :isOpen="isModalOpen" :title="selectedItem.title" :description="selectedItem.description" @close="closeModal" />
 
         </div>
       </div>
@@ -58,7 +58,7 @@
   import { useMarvelStore } from '@/store';
   import '@/styles/CharacterDetails.scss';
   import ShowMoreButton from '@/components/ShowMoreButton.vue';
-  import Modal from '@/components/Modal.vue';
+  import ModalDialog from '@/components/ModalDialog.vue';
   import TopBar from '@/components/TopBar.vue';
   
   
@@ -66,7 +66,7 @@
     name: 'CharacterDetails',
     components: {
     ShowMoreButton,
-    Modal,
+    ModalDialog,
     TopBar,
   },
     props: {
