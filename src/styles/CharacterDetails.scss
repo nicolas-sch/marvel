@@ -1,44 +1,56 @@
+@import 'variables';
+
 .character-details {
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $blue;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  .character-image-container {
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    @media screen and (min-width: 768px) {
-      flex-direction: row;
-      align-items: center;
-  
-      .character-image {
-        max-width: 50%;
-        margin-right: 2rem;
-      }
-  
-      .character-name {
-        font-size: 1.5rem;
-      }
-  
-      .comics,
-      .series {
-        flex: 1;
-        margin-top: 2rem;
-      }
-    }
-  
-    .character-image {
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-    }
-  
+    gap: 2rem;
     .character-name {
       font-size: 1.2rem;
       margin-top: 1rem;
       font-weight: bold;
+      color: $blue;
+      background: $white;
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
     }
-  
+    .character-image {
+      width: 50%;
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius:16px;
+      }
+    }
+  }
+
+  .character-comics-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+
     .comics,
     .series {
       margin-top: 1rem;
+      h2 {
+        color: $blue;
+        background: $white;
+        padding: 0.5rem 1.2rem;
+        border-radius: 8px;
+      }
     }
   
     ul {
@@ -48,6 +60,8 @@
   
     li {
       margin-bottom: 0.5rem;
+      color: $white;
+      cursor: pointer;
     }
   }
-  
+}

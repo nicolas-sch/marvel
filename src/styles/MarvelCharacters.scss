@@ -1,4 +1,6 @@
-.character-wrapper {
+@import 'variables';
+
+.characters-container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -7,39 +9,38 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 10px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-      
+        background-color: $blue;
+        border-radius: 8px;
+        padding: 16px;
+        margin: 16px;
+        width: 200px;
+        text-align: center;
+        transition: transform 0.2s ease-in-out;
+        
+        &:hover {
+            transform: scale(1.05);
+        }
+        
         .character-image {
-          img {
+            width: 100%;
+            img {
             max-width: 100%;
             height: auto;
-          }
+            border-radius: 8px;
+            }
         }
-      
+        
         .character-name {
-          margin-top: 10px;
-          font-weight: bold;
+            margin-top: 10px;
+            font-weight: bold;
+            color: $white;
+            font-size: 1.2rem;
         }
-      
-        @media (min-width: 600px) {
-          // Para telas maiores, exiba 4 cards por linha
-          width: calc(25% - 20px); // 25% para 4 cards por linha e -20px para a margem
-        }
-      
-        @media (max-width: 599px) {
-          // Para telas menores, exiba 2 cards por linha
-          width: calc(50% - 20px); // 50% para 2 cards por linha e -20px para a margem
-        }
-      
-        @media (max-width: 375px) {
-          // Para telas ainda menores, exiba 1 card por linha
-          width: calc(100% - 20px); // 100% para 1 card por linha e -20px para a margem
-        }
-      }
-      
-
+    }
+        
+    #characterSelect {
+        margin-top: 20px;
+        padding: 8px;
+        font-size: 16px;
+    }
 }

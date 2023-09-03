@@ -1,15 +1,14 @@
 <template>
     <div>
       <router-link to="/" class="back-button">Home</router-link>
-  
       <div class="character-details" v-if="character">
-        <div>
+        <div class="character-image-container">
           <div class="character-name">{{ character.name }}</div>
           <div class="character-image">
             <img :src="character.thumbnail.path + '.' + character.thumbnail.extension" alt="Imagem do Personagem" />
           </div>
         </div>
-        <div>
+        <div class="character-comics-container">
           <div class="comics">
             <h2>Comics</h2>
             <ul>

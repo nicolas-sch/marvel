@@ -1,11 +1,12 @@
 <template>
-    <div>
-      <h1>Personagens da Marvel</h1>
-=      <label for="characterSelect">Select your character:</label>
-      <select id="characterSelect" v-model="selectedCharacterId">
-        <option value="">Todos</option>
+    <h1>Marvel</h1>
+        <label for="characterSelect">Select your character:</label>
+        <select id="characterSelect" v-model="selectedCharacterId">
+        <option value="">All</option>
         <option v-for="character in characters" :key="character.id" :value="character.id">{{ character.name }}</option>
-      </select>
+        </select>
+    <div class="characters-container">
+      
       
       <div class="character-card" v-for="character in filteredCharacters" :key="character.id">
         <router-link :to="{ name: 'CharacterDetails', params: { id: character.id } }">

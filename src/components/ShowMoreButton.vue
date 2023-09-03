@@ -1,26 +1,28 @@
 <template>
-    <div>
-      <button @click="showMore" v-if="canShowMore">Show More</button>
+    <div class="button-style">
+        <button @click="showMore" v-if="canShowMore">Show More</button>
     </div>
-  </template>
-  
-  <script>
-  export default {
+</template>
+
+<script>
+import '@/styles/ShowMoreButton.scss';
+
+export default {
     props: {
-      currentVisible: Number,
-      totalItems: Number,
-      increment: Number,
+        currentVisible: Number,
+        totalItems: Number,
+        increment: Number,
     },
     computed: {
-      canShowMore() {
+        canShowMore() {
         return this.currentVisible < this.totalItems;
-      },
+        },
     },
     methods: {
-      showMore() {
+        showMore() {
         this.$emit('show-more', this.increment);
-      },
+        },
     },
-  };
-  </script>
+};
+</script>
   
