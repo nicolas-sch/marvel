@@ -15,16 +15,17 @@
         margin: 16px;
         width: 200px;
         text-align: center;
-        transition: transform 0.2s ease-in-out;
         
-        &:hover {
-            transform: scale(1.05);
-        }
         a {
             text-decoration: none;
         }
         .character-image {
             width: 100%;
+            transition: transform 0.2s ease-in-out;
+        
+            &:hover {
+                transform: scale(1.05) rotate(5deg); /* Adicione a rotação aqui */
+            }
             img {
             width: 12rem;
             height: 12rem;

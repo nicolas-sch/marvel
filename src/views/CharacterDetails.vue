@@ -143,13 +143,13 @@ export default {
     };
   },
   methods: {
-  onShowMoreSeries(increment) {
-    this.seriesVisible += increment;
+    onShowMoreSeries(increment) {
+      this.seriesVisible += increment;
+    },
+    onShowMoreComics(increment) {
+      this.comicsVisible += increment;
+    },
   },
-  onShowMoreComics(increment) {
-    this.comicsVisible += increment;
-  },
-},
 };
 </script>
   

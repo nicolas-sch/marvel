@@ -9,6 +9,10 @@
   border-radius: 8px;
   padding: 16px;
   margin: 16px;
+  @media (max-width: 520px) {
+    display: flex;
+    flex-direction: column;
+  }
   .character-image-container {
     width: 50%;
     display: flex;
@@ -31,6 +35,10 @@
         max-width: 100%;
         height: auto;
         border-radius:16px;
+        border: 2px solid $red;
+      }
+      @media (max-width: 520px) {
+        width: 100%;
       }
     }
   }
@@ -41,10 +49,17 @@
     align-items: center;
     justify-content: center;
     width: 50%;
+    @media (max-width: 520px) {
+      width: 100%;
+    }
 
     .comics,
     .series {
+      width: 60%;
       margin-top: 1rem;
+      @media (max-width: 520px) {
+        width: 100%;
+      }
       h2 {
         color: $blue;
         background: $white;
