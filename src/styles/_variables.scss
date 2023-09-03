@@ -4,3 +4,15 @@ $black: #000000;
 $gray: #504a4a;
 $orange: #f78f3f;
 $white: #ffffff;
+
+:root {
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --link-color: #007BFF;
+}
+
+.dark-mode {
+    --background-color: #333333;
+    --text-color: #ffffff;
+    --link-color: #00ffcc;
+}

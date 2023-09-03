@@ -14,7 +14,7 @@
             <div class="character-image">
             <img :src="character.thumbnail.path + '.' + character.thumbnail.extension" alt="Imagem do Personagem" />
             </div>
-            <div class="character-name">{{ character.name }}</div>
+            <p class="character-name">{{ character.name }}</p>
         </router-link>
         </div>
     </div>
