@@ -12,5 +12,13 @@
         border-radius: 8px;
         border: none;
         cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+}
+
+.button-style:hover {
+    button {
+        background:$white;
+        color: $blue;
     }
 }

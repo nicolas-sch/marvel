@@ -25,7 +25,7 @@ instance.interceptors.request.use(config => {
 
 export const useMarvelStore = defineStore('marvel', {
     state: () => ({
-        characters: JSON.parse(localStorage.getItem('characters')) || [], // Inicialize a partir do localStorage
+        characters: JSON.parse(localStorage.getItem('characters')) || [],
       }),
       actions: {
         async fetchCharacters() {

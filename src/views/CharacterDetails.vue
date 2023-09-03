@@ -1,6 +1,8 @@
 <template>
+  <TopBar>
+    <router-link to="/" class="home-button">Home</router-link>
+  </TopBar>
     <div>
-      <router-link to="/" class="back-button">Home</router-link>
       <div class="character-details" v-if="character">
         <div class="character-image-container">
           <div class="character-name">{{ character.name }}</div>
@@ -57,6 +59,7 @@
   import '@/styles/CharacterDetails.scss';
   import ShowMoreButton from '@/components/ShowMoreButton.vue';
   import Modal from '@/components/Modal.vue';
+  import TopBar from '@/components/TopBar.vue';
   
   
   export default {
@@ -64,6 +67,7 @@
     components: {
     ShowMoreButton,
     Modal,
+    TopBar,
   },
     props: {
       id: {
