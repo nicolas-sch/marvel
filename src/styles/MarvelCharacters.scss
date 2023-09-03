@@ -1,0 +1,45 @@
+.character-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    .character-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+      
+        .character-image {
+          img {
+            max-width: 100%;
+            height: auto;
+          }
+        }
+      
+        .character-name {
+          margin-top: 10px;
+          font-weight: bold;
+        }
+      
+        @media (min-width: 600px) {
+          // Para telas maiores, exiba 4 cards por linha
+          width: calc(25% - 20px); // 25% para 4 cards por linha e -20px para a margem
+        }
+      
+        @media (max-width: 599px) {
+          // Para telas menores, exiba 2 cards por linha
+          width: calc(50% - 20px); // 50% para 2 cards por linha e -20px para a margem
+        }
+      
+        @media (max-width: 375px) {
+          // Para telas ainda menores, exiba 1 card por linha
+          width: calc(100% - 20px); // 100% para 1 card por linha e -20px para a margem
+        }
+      }
+      
+
+}
